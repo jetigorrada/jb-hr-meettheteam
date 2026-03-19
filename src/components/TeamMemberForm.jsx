@@ -29,14 +29,6 @@ function TeamMemberForm({ onAdd, editingMember, onCancelEdit }) {
     reader.readAsDataURL(file)
   }
 
-  const handleUrlChange = (e) => {
-    const url = e.target.value
-    setPhotoUrl(url)
-    if (url) {
-      setPhotoPreview(url)
-    }
-  }
-
   const resetForm = () => {
     setName('')
     setPosition('')
@@ -79,12 +71,6 @@ function TeamMemberForm({ onAdd, editingMember, onCancelEdit }) {
           <div className="photo-upload-controls">
             <label>Photo</label>
             <div className="photo-input-row">
-              <input
-                type="text"
-                placeholder="Paste image URL..."
-                value={photoUrl}
-                onChange={handleUrlChange}
-              />
               <button
                 type="button"
                 className="btn-upload"
