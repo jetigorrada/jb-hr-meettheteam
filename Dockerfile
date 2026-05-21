@@ -7,12 +7,12 @@ COPY package*.json ./
 RUN npm ci
 
 COPY . .
-RUN npm run build
+RUN npm run build -- --base /
 
 # Stage 2: Serve
 FROM nginx:stable-alpine
 
-COPY --from=builder /app/dist /usr/share/nginx/html/jb-hr-meettheteam
+COPY --from=builder /app/dist /usr/share/nginx/html
 
 EXPOSE 80
 
