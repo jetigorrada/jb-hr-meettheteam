@@ -12,7 +12,7 @@ RUN npm run build
 # Stage 2: Serve
 FROM nginx:stable-alpine
 
-COPY --from=builder /app/dist /usr/share/nginx/html
+COPY --from=builder /app/dist /usr/share/nginx/html/jb-hr-meettheteam
 COPY nginx.conf /etc/nginx/conf.d/default.conf
 
 EXPOSE 80
